@@ -1,1 +1,10 @@
 /* TODO Add site wide styles */
+.letter {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 2px;
+}
+
+.space {
+    width: 20px;
+}
