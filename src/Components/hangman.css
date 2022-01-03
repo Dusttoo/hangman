@@ -1,0 +1,14 @@
+.matched-false {
+    display: none;
+}
+
+.letter-input {
+    border: none;
+    width: 20px;
+    background-color: rgb(255, 208, 0);
+
+}
+
+.letter-input:focus {
+    outline: none;
+}

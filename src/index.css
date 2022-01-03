@@ -1,10 +1,29 @@
 /* TODO Add site wide styles */
+.page-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.puzzle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .letter {
-    border: 1px solid black;
+    border: 1px solid rgb(219, 186, 0);
+    background-color: rgb(255, 208, 0);
+    color: rgb(87, 71, 0);
+    text-align: center;
+    font-size: 150%;
     padding: 5px;
     margin: 2px;
+    width: 20px;
 }
 
 .space {
     width: 20px;
+    margin: 2px;
 }

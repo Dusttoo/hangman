@@ -1,11 +1,12 @@
-import { getCookie, getWord, setCookie } from "./Components/utils";
+import { getCookie, getWord, setCookie, shuffle } from "./Components/utils";
 import { useEffect, useState } from "react";
+import Box from "./Components/Box";
 
 function App() {
   const sentence = getCookie('sentence')
+  const scrambled = shuffle(sentence)
   const [words, setWord] = useState('')
-  const [index, setIndex] = useState(0)
-  console.log(index)
+
   if(!sentence) {
     setCookie("sentence", words, 7);
   }
@@ -20,23 +21,27 @@ function App() {
   
   return (
     <>
-      <h1>Hangman</h1>
-      {sentence.split('').map(letter => {
-        let cName = ''
-        if(letter === ' ') {
-          cName='space'
-        } else {
-          cName='letter'
-        }
-        return (
-          <>
-          <span key={index} className={cName}>
-            <span className="inner">{letter}</span>
-          </span>
-          </>
-        );
-
-      })}
+      <div className="page-container">
+        <h1>Hangman</h1>
+        <p>{scrambled}</p>
+        <div className="puzzle-container">
+          {sentence.split("").map((letter) => {
+            let cName = "";
+            if (letter === " ") {
+              cName = "space";
+            } else {
+              cName = "letter";
+            }
+            return (
+              <>
+                <span className={cName}>
+                  <Box letter={letter} />
+                </span>
+              </>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 }

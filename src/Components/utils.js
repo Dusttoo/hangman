@@ -39,3 +39,22 @@ export const isAlpha = function (ch) {
     ((ch >= "a" && ch <= "z") || (ch >= "A" && ch <= "Z"))
   );
 };
+
+export const shuffle = function (str, breaker = " ") {
+  let a = str.split(""),
+    n = a.length;
+
+    console.log(str, a)
+
+  for (let i = n - 1; i > 0; i--) {
+    if (a[i] !== breaker) {
+      let j = Math.floor(Math.random() * (i + 1));
+      if (a[j] !== breaker) {
+        let tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+      }
+    }
+  }
+  return a.join("");
+};
